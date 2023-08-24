@@ -1,0 +1,68 @@
+html, body {
+  height: 100%;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main div {
+  background: #ccc;
+}
+.main .header {
+  width: 100%;
+  height: 50px;
+}
+.main .wrapper {
+  display: grid;
+  grid-template-columns: 200px auto;
+  background: #fff;
+}
+.main .wrapper .content {
+  background: yellow;
+  height: fit-content;
+  grid-column-start: 2;
+  grid-row: span 3;
+}
+.main .wrapper .content img {
+  float: left;
+  padding: 30px 30px 0 0;
+}
+.main .wrapper .side-1 {
+  background: green;
+  grid-row-start: 2;
+  overflow: auto;
+  resize: vertical;
+}
+.main .wrapper .side-2 {
+  background: red;
+  grid-row-start: 1;
+  overflow: auto;
+  resize: vertical;
+}
+
+.footer {
+  width: 100%;
+  margin-top: auto;
+  height: 50px;
+}
+
+@media (max-width: 767px) {
+  .main .wrapper {
+    grid-template-columns: auto;
+  }
+  .main .wrapper .side-1 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
+  .main .wrapper .side-2 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .main .wrapper .content {
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+}
